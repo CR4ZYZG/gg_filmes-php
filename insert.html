@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<HTML>
+<header>
+    <meta charset="utf-8"/>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+</header>
+<BODY>
+
+
+
+    <div>
+        <b><font color="#0000FF">Cadastro de Atores</font></b>    
+            </br> </br>   
+
+        <form id="formAtor" action="Ator.php" method="post">
+
+            <b> Código:</b> <input type="number" name="cod" size="11">
+            </br></br>
+
+            <b> Nome do Ator:</b> <input type="text" name="nome" size="50">
+            </br></br>
+
+            <b> Data de Nascimento:</b> <input type="date" name="DataNasc" size="100">
+                </br></br>
+
+            <b> Data de Falecimento:</b> <input type="date" name="DataFalec" size="100">
+            </br></br>
+
+            
+        <input type="reset" value="Reset">   <input type="submit" value="Cadastrar">
+    
+        </form>
+    </div>
+</br> </br></br> </br>
+
+
+
+    <div>
+        <b><font color="#0000FF">Cadastro de Diretores</font></b>    
+        </br> </br>   
+
+    <form id="formDiretor" action="Diretor.php" method="post">
+
+        <b> Código:</b> <input type="number" name="cod" size="11">
+        </br></br>
+
+        <b> Nome do Diretor:</b> <input type="text" name="nome" size="50">
+        </br></br>
+
+        <b> Data de Nascimento:</b> <input type="date" name="DataNasc" size="100">
+            </br></br>
+
+        <b> Data de Falecimento:</b> <input type="date" name="DataFalec" size="100">
+        </br></br>
+
+       
+    <input type="reset" value="Reset">   <input type="submit" value="Cadastrar">
+   
+    </form>
+    </div>
+</br> </br></br> </br>
+
+
+
+
+    <div>
+        <b><font color="#0000FF">Cadastro de Generos</font></b>    
+    </br> </br>   
+
+        <form id="formGenero" action="Genero.php" method="post">
+
+            <b> Código:</b> <input type="number" name="cod" size="11">
+            </br></br>
+
+            <b> Genero:</b> <input type="text" name="nome" size="50">
+            </br></br>
+
+            
+        <input type="reset" value="Reset">   <input type="submit" value="Cadastrar">
+
+        </form>
+    </div>
+</br> </br></br> </br>
+
+
+
+
+    <div>
+        <b><font color="#0000FF">Cadastro de produtoras</font></b>    
+        </br> </br>   
+
+        <form id="formProdutora" action="Produtora.php" method="post">
+
+            <b> Código:</b> <input type="number" name="cod" size="11">
+            </br></br>
+
+            <b> Nome da Produtora:</b> <input type="text" name="nome" size="50">
+            </br></br>
+
+            <b> Fundador:</b> <input type="text" name="fundador" size="50">
+                </br></br>
+
+            
+            <input type="reset" value="Reset">   <input type="submit" value="Cadastrar">
+        
+        </form>
+    </div>
+</br> </br></br> </br>
+
+
+
+    <div>
+        <b><font color="#0000FF">Cadastro de Filmes</font></b>    
+        </br> </br>   
+
+    <form id="formFilme" action="Filme.php" method="post">
+
+        <b> Código:</b> <input type="number" name="cod" size="11">
+        </br></br>
+
+        <b> Titulo do Filme:</b> <input type="text" name="nome" size="50">
+        </br></br>
+
+        <b> Data de Lancamento:</b> <input type="number" name="dataLanc" size="4">
+            </br></br>
+
+        <b> Código Da Produtora:</b> <input type="number" name="codProd" size="11">
+            </br></br>
+
+        <b> Código De Genero:</b> <input type="number" name="codGen" size="11">
+            </br></br>
+
+        <b> Código De Ator/atriz:</b> <input type="number" name="codAtor" size="11">
+            </br></br>
+
+        <b> Código De Diretor(a):</b> <input type="number" name="codDire" size="11">
+            </br></br>
+        
+    <input type="reset" value="Reset">   <input type="submit" value="Cadastrar">
+   
+   </form>
+    </div>
+
+
+
+
+</BODY>
+
+<script type="text/javascript">$("#formAtor").submit(function(e) {
+    var url = "Ator.php"; 
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#formAtor").serialize(),
+           success: function(data)
+           {
+               alert("Ator cadastrado com sucesso meu Paladino");
+               //utilizar o dado retornado para alterar algum dado da tela.
+           }
+         });
+
+    e.preventDefault();// esse comando serve para previnir que o form realmente realize o submit e atualize a tela.
+});</script>
+
+<script type="text/javascript">$("#formDiretor").submit(function(e) {
+    var url = "Diretor.php"; 
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#formDiretor").serialize(),
+           success: function(data)
+           {
+               alert("Diretor cadastrado com sucesso meu Almirante");
+               //utilizar o dado retornado para alterar algum dado da tela.
+           }
+         });
+
+    e.preventDefault();// esse comando serve para previnir que o form realmente realize o submit e atualize a tela.
+});</script>
+
+<script type="text/javascript">$("#formGenero").submit(function(e) {
+    var url = "Genero.php"; 
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#formGenero").serialize(),
+           success: function(data)
+           {
+               alert("Gênero cadastrado com sucesso meu Diplomata");
+               //utilizar o dado retornado para alterar algum dado da tela.
+           }
+         });
+
+    e.preventDefault();// esse comando serve para previnir que o form realmente realize o submit e atualize a tela.
+});</script>
+
+<script type="text/javascript">$("#formProdutora").submit(function(e) {
+    var url = "Produtora.php"; 
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#formProdutora").serialize(),
+           success: function(data)
+           {
+               alert("Produtora cadastrada com sucesso meu Capitão");
+               //utilizar o dado retornado para alterar algum dado da tela.
+           }
+         });
+
+    e.preventDefault();// esse comando serve para previnir que o form realmente realize o submit e atualize a tela.
+});</script>
+
+<script type="text/javascript">$("#formFilme").submit(function(e) {
+    var url = "Filme.php"; 
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#formFilme").serialize(),
+           success: function(data)
+           {
+               alert("Filme cadastrado com sucesso meu Lorde coronel alto major centurião almirante duplo pra frente sargento general comodoro da primeira legião terceira multiplicação da companhia da artilharia de vanguarda brigadeiro de frente de costas tenente");
+               //utilizar o dado retornado para alterar algum dado da tela.
+           }
+         });
+
+    e.preventDefault();// esse comando serve para previnir que o form realmente realize o submit e atualize a tela.
+});</script>
+
+</HTML>   
